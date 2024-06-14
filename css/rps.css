@@ -1,0 +1,115 @@
+.accordion {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background: #a9c7df;
+}
+
+.accordion__label,
+.accordion__content {
+  padding: 14px 20px;
+}
+
+.accordion__label {
+  display: block;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+}
+
+.accordion__label:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  box-shadow: 0 0 0 3px rgb(222, 161, 238), inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.accordion__label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50px;
+  width: 12px;
+  height: 6px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+  background-size: contain;
+  transition: transform 0.4s;
+}
+
+.accordion__content {
+  background: #d4f8f8;
+  line-height: 1.6;
+  font-size: 15px;
+  display: none;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+
+/*SCOPE image CSS*/
+
+.tab-sec-icons img {
+  width: 50px;
+  display: inline-block;
+  align-items: Right;
+  margin: 15px 12px 5px;
+  position: relative;
+}
+
+.technology {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-left: 3px;
+}
+.technology .tec-icons img {
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-left: 200px;
+  /* display: inline-block; */
+  width: 100%;
+  max-width: 150px;
+}
+@media (max-width: 460px) {
+  .technology .tec-icons img {
+    max-width: none;
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .tabs {
+    width: 100%;
+  }
+  .tabs-container {
+    padding: 4rem 4rem;
+  }
+  .technology .tec-icons img {
+    max-width: 150px;
+  }
+}
+@media (min-width: 992px) {
+  .tabs {
+    width: 100%;
+  }
+  .technology .tec-icons img {
+    max-width: 150px;
+  }
+}
